@@ -1,9 +1,13 @@
 import React from 'react';
 
-import LogIn from './hooks/LogIn';
+import Router from './Components/Router';
+import { AuthenticatedProvider } from './Components/AuthenticatedRoute';
 
 export default () => {
+
   return (
-      <LogIn />
+    <AuthenticatedProvider>
+      <Router />
+    </AuthenticatedProvider>
   );
 };

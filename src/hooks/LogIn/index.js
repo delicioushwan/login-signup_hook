@@ -5,6 +5,7 @@ import useInput from '../../Utils/useInput';
 import Input from '../../Components/Input';
 import Modal from '../../Components/Modal';
 import useModal from '../../Components/Modal/useModal';
+import useAuth from '../../Utils/useAuth';
 
 import {
   Btn, Form, Registration,
@@ -13,6 +14,7 @@ import {
 const SignUp = lazy(() => import('../SignUp'));
 
 export default () => {
+  const auth = useAuth();
   const form = useForm();
   const phoneInput = useInput(
     {
@@ -42,6 +44,7 @@ export default () => {
       <h1>로그인</h1>
       <Form onSubmit={e => {
         e.preventDefault();
+        auth.logIn();
       }}>
         <div>휴대폰번호 "-" 없이 입력</div>
         <Input {...phoneInput} />

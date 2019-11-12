@@ -1,7 +1,6 @@
 import * as Action from '../actions';
 
 const authReducer = (state, action) => {
-  console.log('run')
   switch (action.type) {
     case Action.LOGOUT: {
       return {
@@ -11,7 +10,6 @@ const authReducer = (state, action) => {
       };
     }
     case Action.LOGIN: {
-      console.log('run')
       return {
         ...state,
         isAuthenticated: true,
